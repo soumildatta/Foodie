@@ -13,6 +13,7 @@
 		A211B0A324D9102800F22907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A211B0A224D9102800F22907 /* Assets.xcassets */; };
 		A211B0A624D9102800F22907 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A211B0A524D9102800F22907 /* Preview Assets.xcassets */; };
 		A211B0A924D9102800F22907 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A211B0A724D9102800F22907 /* LaunchScreen.storyboard */; };
+		A216A22424D9DCB00037CE4B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A216A22324D9DCB00037CE4B /* MapView.swift */; };
 		A2A03CF424D91B8B002DC15A /* RestaurantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A03CF324D91B8B002DC15A /* RestaurantCardView.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		A211B0A524D9102800F22907 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A211B0A824D9102800F22907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A211B0AA24D9102800F22907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A216A22324D9DCB00037CE4B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A2A03CF324D91B8B002DC15A /* RestaurantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,7 +67,7 @@
 				A211B0A724D9102800F22907 /* LaunchScreen.storyboard */,
 				A211B0AA24D9102800F22907 /* Info.plist */,
 				A211B0A424D9102800F22907 /* Preview Content */,
-				A2A03CF324D91B8B002DC15A /* RestaurantCardView.swift */,
+				A216A22224D9DC870037CE4B /* Supporting Views */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -76,6 +78,15 @@
 				A211B0A524D9102800F22907 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A216A22224D9DC870037CE4B /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2A03CF324D91B8B002DC15A /* RestaurantCardView.swift */,
+				A216A22324D9DCB00037CE4B /* MapView.swift */,
+			);
+			path = "Supporting Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 			files = (
 				A211B09D24D9102800F22907 /* AppDelegate.swift in Sources */,
 				A2A03CF424D91B8B002DC15A /* RestaurantCardView.swift in Sources */,
+				A216A22424D9DCB00037CE4B /* MapView.swift in Sources */,
 				A211B09F24D9102800F22907 /* SceneDelegate.swift in Sources */,
 				A211B0A124D9102800F22907 /* ContentView.swift in Sources */,
 			);
