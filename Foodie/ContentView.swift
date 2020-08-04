@@ -10,7 +10,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        List {
+            RestaurantCardView()
+            RestaurantCardView()
+            RestaurantCardView()
+            RestaurantCardView()
+            RestaurantCardView()
+            RestaurantCardView()
+            RestaurantCardView()
+            RestaurantCardView()
+            RestaurantCardView()
+        }
+        .onAppear {
+            UITableView.appearance().separatorStyle = .none
+        }
     }
 }
 
