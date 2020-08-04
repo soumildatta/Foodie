@@ -9,20 +9,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isPresentingModal = false
+    
     var body: some View {
-        List {
-            RestaurantCardView()
-            RestaurantCardView()
-            RestaurantCardView()
-            RestaurantCardView()
-            RestaurantCardView()
-            RestaurantCardView()
-            RestaurantCardView()
-            RestaurantCardView()
-            RestaurantCardView()
-        }
-        .onAppear {
-            UITableView.appearance().separatorStyle = .none
+        VStack(alignment: .center) {
+            HStack {
+                Spacer()
+                Text("top restaurants near you".uppercased())
+                    .fontWeight(.medium)
+                    .foregroundColor(Color.gray)
+                    .padding()
+                Spacer()
+            }
+            List {
+                Button(action: {
+                    self.isPresentingModal.toggle()
+                }) {
+                    RestaurantCardView(locationString: "Oxford, MS", restaurantName: "Toyo")
+                }
+            }
+            .onAppear {
+                UITableView.appearance().separatorStyle = .none
+            }
+            .sheet(isPresented: $isPresentingModal, content: {
+                Text("Presenting Modal")
+            })
         }
     }
 }

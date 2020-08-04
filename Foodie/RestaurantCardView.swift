@@ -9,12 +9,16 @@
 import SwiftUI
 
 struct RestaurantCardView: View {
+    
+    var locationString: String
+    var restaurantName: String
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Oxford, MS")
+                Text(locationString)
                     .font(.subheadline).fontWeight(.semibold).foregroundColor(.secondary)
-                Text("Ajax's Diner")
+                Text(restaurantName)
                     .font(.title)
                     .fontWeight(.semibold)
             }
@@ -31,6 +35,6 @@ struct RestaurantCardView: View {
 
 struct RestaurantCardView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantCardView()
+        RestaurantCardView(locationString: "Oxford, MS", restaurantName: "Chick-Fil-A")
     }
 }
