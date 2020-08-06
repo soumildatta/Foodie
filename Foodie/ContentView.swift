@@ -14,6 +14,9 @@ struct ContentView: View {
     
     var body: some View {
         VStack(alignment: .center) {
+            Text("Foodie")
+                .font(.system(size: 50))
+                .fontWeight(.bold)
             HStack {
                 Spacer()
                 Text("top restaurants near you".uppercased())
@@ -26,14 +29,14 @@ struct ContentView: View {
                 Button(action: {
                     self.isPresentingModal.toggle()
                 }) {
-                    RestaurantCardView(locationString: "Oxford, MS", restaurantName: "Toyo")
+                    RestaurantCardView(locationString: "Oxford, MS", restaurantName: "Ajax Diner")
                 }
             }
             .onAppear {
                 UITableView.appearance().separatorStyle = .none
             }
             .sheet(isPresented: $isPresentingModal, content: {
-                Text("Presenting Modal")
+                RestaurantModal()
             })
         }
     }
