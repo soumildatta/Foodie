@@ -5,13 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>The app needs your location to find nearby restaurants</string>
 	<key>NSLocationUsageDescription</key>
-	<string></string>
+	<string>The app needs your location to find nearby restaurants</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>The app needs your location to find nearby restaurants</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

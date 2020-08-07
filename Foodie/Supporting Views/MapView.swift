@@ -12,6 +12,7 @@ import MapKit
 struct MapView: UIViewRepresentable {
     var latitude: String
     var longitude: String
+    let locationManager = CLLocationManager()
     
     // for annotation
     var title: String
@@ -26,17 +27,28 @@ struct MapView: UIViewRepresentable {
             latitude: (latitude as NSString).doubleValue,
             longitude: (longitude as NSString).doubleValue
         )
-        let span = MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.006)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
-        uiView.setRegion(region, animated: true)
+
+        uiView.showsUserLocation = true
+        let status = CLLocationManager.authorizationStatus()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         
-        let restaurant = RestaurantAnnotation(
-            title: title,
-            locationName: locationName,
-            coordinate: coordinate
-        )
-        
-        uiView.addAnnotation(restaurant)
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+//            let location: CLLocationCoordinate2D = locationManager.location!.coordinate
+            let span = MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.006)
+            let region = MKCoordinateRegion(center: coordinate, span: span)
+            uiView.setRegion(region, animated: true)
+            
+            let restaurant = RestaurantAnnotation(
+                title: title,
+                locationName: locationName,
+                coordinate: coordinate
+            )
+
+            uiView.addAnnotation(restaurant)
+        }
     }
 }
 

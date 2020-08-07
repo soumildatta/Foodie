@@ -12,7 +12,13 @@ class NetworkManager: ObservableObject {
     var location = [Location]()
     @Published var restaurants = [RestaurantOuter]()
     
+    // for user coordinates
+    let userLocation = UserLocationManager()
+    
     func fetchRestaurantData() {
+        
+        print(userLocation.getLocationCoordinates())
+        
         // first, get entity id from zomato location api
         if let url = URL(string: "https://developers.zomato.com/api/v2.1/locations?apikey=\(Keys.apiKey)&query=Oxford%2C%20Mississippi") {
             URLSession.shared.dataTask(with: url) { (data, _, error) in

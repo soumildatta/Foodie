@@ -44,10 +44,9 @@ struct ContentView: View {
                     )
                 }
             }
-            .onAppear {
-                self.networkManager.fetchRestaurantData()
-                UITableView.appearance().separatorStyle = .none
-            }
+        }.onAppear {
+            self.networkManager.fetchRestaurantData()
+            UITableView.appearance().separatorStyle = .none
         }
     }
 }

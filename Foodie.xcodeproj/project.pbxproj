@@ -22,6 +22,7 @@
 		A2DEB2B524DCE8CD00298B31 /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */; };
 		A2DEB2B924DCF71300298B31 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2B824DCF71300298B31 /* Keys.swift */; };
 		A2E01DCB24DDC86D00E96B4B /* RestaurantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E01DCA24DDC86D00E96B4B /* RestaurantAnnotation.swift */; };
+		A2E01DCD24DDD87300E96B4B /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E01DCC24DDD87300E96B4B /* UserLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
 		A2DEB2B824DCF71300298B31 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		A2E01DCA24DDC86D00E96B4B /* RestaurantAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotation.swift; sourceTree = "<group>"; };
+		A2E01DCC24DDD87300E96B4B /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				A2DEB2B224DCBA6900298B31 /* LocationData.swift */,
 				A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */,
 				A2E01DCA24DDC86D00E96B4B /* RestaurantAnnotation.swift */,
+				A2E01DCC24DDD87300E96B4B /* UserLocationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				A216A22424D9DCB00037CE4B /* MapView.swift in Sources */,
 				A2DEB2B924DCF71300298B31 /* Keys.swift in Sources */,
 				A2DEB2B024DCB61000298B31 /* NetworkManager.swift in Sources */,
+				A2E01DCD24DDD87300E96B4B /* UserLocationManager.swift in Sources */,
 				A211B09F24D9102800F22907 /* SceneDelegate.swift in Sources */,
 				A2DEB2B524DCE8CD00298B31 /* RestaurantData.swift in Sources */,
 				A216A22624D9E0790037CE4B /* RestaurantModalInfo.swift in Sources */,
