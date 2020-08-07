@@ -10,33 +10,44 @@ import SwiftUI
 
 struct RestaurantCardView: View {
     
+    @State var isPresentingModal = false
     var locationString: String
     var restaurantName: String
+    var cuisineType: String
+    var timings: String
+    var priceRange: Int
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(restaurantName)
-                .font(.title)
-                .fontWeight(.semibold)
-                    .padding(.bottom, 8)
-                Text(locationString)
-                    .font(.subheadline).fontWeight(.semibold).foregroundColor(.secondary)
+        Button(action: {
+            self.isPresentingModal.toggle()
+        }) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(restaurantName)
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .padding(.bottom, 8)
+                    Text(locationString)
+                        .font(.subheadline).fontWeight(.semibold).foregroundColor(.secondary)
+                }
+                Spacer()
             }
-            Spacer()
-        }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(10)
-        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1))
-        .clipped()
-        .shadow(radius: 4)
-        .padding(.vertical, 5)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(10)
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1))
+            .clipped()
+            .shadow(radius: 4)
+            .padding(.vertical, 5)
+        }.sheet(isPresented: $isPresentingModal, content: {
+            RestaurantModal(restaurantName: self.restaurantName, restaurantAddress: self.locationString, cuisineType: self.cuisineType, timings: self.timings, priceRange: self.priceRange)
+        })
+        
     }
 }
 
 struct RestaurantCardView_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantCardView(locationString: "Oxford, MS", restaurantName: "Chick-Fil-A")
+        RestaurantCardView(locationString: "Chick-Fil-A Avenue", restaurantName: "Chick-Fil-A", cuisineType: "Fast Food", timings: "All day every day", priceRange: 2)
     }
 }

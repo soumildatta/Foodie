@@ -28,28 +28,17 @@ struct ContentView: View {
                     .padding()
                 Spacer()
             }
-//            List(networkManager.restaurants) { item in
-//                VStack {
-//                    Text(item.restaurant.name)
-//                    Text(item.restaurant.location.address)
-//                    Text(String(item.restaurant.price_range))
-//                    //                        Text(location.entity_type)
-//                }
-//            }
             List(networkManager.restaurants) { data in
                 Button(action: {
                     self.isPresentingModal.toggle()
                 }) {
-                    RestaurantCardView(locationString: data.restaurant.location.address, restaurantName: data.restaurant.name)
+                    RestaurantCardView(locationString: data.restaurant.location.address, restaurantName: data.restaurant.name, cuisineType: data.restaurant.cuisines, timings: data.restaurant.timings, priceRange: data.restaurant.price_range)
                 }
             }
             .onAppear {
                 self.networkManager.fetchRestaurantData()
                 UITableView.appearance().separatorStyle = .none
             }
-            .sheet(isPresented: $isPresentingModal, content: {
-                RestaurantModal()
-            })
         }
     }
 }

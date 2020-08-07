@@ -9,12 +9,18 @@
 import SwiftUI
 
 struct RestaurantModalInfo: View {
+    var restaurantName: String
+    var restaurantAddress: String
+    var cuisineType: String
+    var timings: String
+    var priceRance: Int
+    
     var body: some View {
         VStack {
-            Text("Ajax Diner")
+            Text(restaurantName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
-            Text("118 Courthouse Sq, Oxford 38655")
+            Text(restaurantAddress)
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundColor(.secondary)
@@ -24,13 +30,13 @@ struct RestaurantModalInfo: View {
                     Text("Cuisine: ")
                         .fontWeight(.medium)
                     Spacer()
-                    Text("Burger, Diner, Southern")
+                    Text(cuisineType)
                 }.padding([.top, .horizontal])
                 HStack {
                     Text("Timings: ")
                         .fontWeight(.medium)
                     Spacer()
-                    Text("7 AM to 1:30 PM (Mon-Fri),8 AM to 3 PM (Sat-Sun)")
+                    Text(timings)
                         .font(.system(size: 14))
                         .multilineTextAlignment(.trailing)
                         .padding(.leading)
@@ -39,7 +45,7 @@ struct RestaurantModalInfo: View {
                     Text("Pricing: ")
                         .fontWeight(.medium)
                     Spacer()
-                    Text("$$$")
+                    Text(String(priceRance))
                         .foregroundColor(.green)
                 }.padding([.top, .horizontal])
             }.padding()
@@ -51,6 +57,6 @@ struct RestaurantModalInfo: View {
 
 struct RestaurantModalInfo_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantModalInfo()
+        RestaurantModalInfo(restaurantName: "Ajax Diner", restaurantAddress: "118 Courthouse Sq, Oxford 38655", cuisineType: "Burger, Diner, Southern", timings: "7 AM to 1:30 PM (Mon-Fri),8 AM to 3 PM (Sat-Sun)", priceRance: 2)
     }
 }

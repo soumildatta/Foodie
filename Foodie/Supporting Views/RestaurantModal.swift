@@ -14,10 +14,16 @@ struct RestaurantModal: View {
     // https://stackoverflow.com/questions/56517400/swiftui-dismiss-modal
     @Environment(\.presentationMode) private var presentationMode
     
+    var restaurantName: String
+    var restaurantAddress: String
+    var cuisineType: String
+    var timings: String
+    var priceRange: Int
+    
     var body: some View {
         VStack {
             MapView().frame(height: 400).edgesIgnoringSafeArea(.top)
-            RestaurantModalInfo()
+            RestaurantModalInfo(restaurantName: restaurantName, restaurantAddress: restaurantAddress, cuisineType: cuisineType, timings: timings, priceRance: priceRange)
             Spacer()
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
@@ -37,6 +43,6 @@ struct RestaurantModal: View {
 
 struct RestaurantModal_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantModal()
+        RestaurantModal(restaurantName: "Item", restaurantAddress: "There", cuisineType: "Is", timings: "Something", priceRange: 2)
     }
 }
