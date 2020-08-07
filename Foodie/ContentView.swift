@@ -14,12 +14,13 @@ struct ContentView: View {
     @ObservedObject var networkManager = NetworkManager()
     
     var body: some View {
-        print(networkManager.$restaurants)
-        
         return VStack(alignment: .center) {
             Text("Foodie")
                 .font(.system(size: 50))
                 .fontWeight(.bold)
+                .padding(.bottom)
+            Text("🍷🌮🥗🌯🥘🍲🍱🍜🍣🍛🍷")
+                .font(.system(size: 27))
             HStack {
                 Spacer()
                 Text("top restaurants near you".uppercased())
@@ -32,7 +33,15 @@ struct ContentView: View {
                 Button(action: {
                     self.isPresentingModal.toggle()
                 }) {
-                    RestaurantCardView(locationString: data.restaurant.location.address, restaurantName: data.restaurant.name, cuisineType: data.restaurant.cuisines, timings: data.restaurant.timings, priceRange: data.restaurant.price_range)
+                    RestaurantCardView(
+                        locationString: data.restaurant.location.address,
+                        restaurantName: data.restaurant.name,
+                        cuisineType: data.restaurant.cuisines,
+                        timings: data.restaurant.timings,
+                        priceRange: data.restaurant.price_range,
+                        latitude: data.restaurant.location.latitude,
+                        longitude: data.restaurant.location.longitude
+                    )
                 }
             }
             .onAppear {

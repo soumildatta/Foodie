@@ -20,9 +20,14 @@ struct RestaurantModal: View {
     var timings: String
     var priceRange: Int
     
+    var latitude: String
+    var longitude: String
+    
     var body: some View {
         VStack {
-            MapView().frame(height: 400).edgesIgnoringSafeArea(.top)
+            MapView(latitude: latitude, longitude: longitude)
+                .frame(height: 400)
+                .edgesIgnoringSafeArea(.top)
             RestaurantModalInfo(restaurantName: restaurantName, restaurantAddress: restaurantAddress, cuisineType: cuisineType, timings: timings, priceRance: priceRange)
             Spacer()
             Button(action: {
@@ -43,6 +48,6 @@ struct RestaurantModal: View {
 
 struct RestaurantModal_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantModal(restaurantName: "Item", restaurantAddress: "There", cuisineType: "Is", timings: "Something", priceRange: 2)
+        RestaurantModal(restaurantName: "Item", restaurantAddress: "There", cuisineType: "Is", timings: "Something", priceRange: 2, latitude: "34.3665750000", longitude: "-89.5193210000")
     }
 }
