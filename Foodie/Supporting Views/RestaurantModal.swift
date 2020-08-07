@@ -25,7 +25,11 @@ struct RestaurantModal: View {
     
     var body: some View {
         VStack {
-            MapView(latitude: latitude, longitude: longitude)
+            MapView(
+                latitude: latitude,
+                longitude: longitude,
+                title: restaurantName,
+                locationName: restaurantAddress)
                 .frame(height: 400)
                 .edgesIgnoringSafeArea(.top)
             RestaurantModalInfo(restaurantName: restaurantName, restaurantAddress: restaurantAddress, cuisineType: cuisineType, timings: timings, priceRance: priceRange)

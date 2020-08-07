@@ -21,6 +21,7 @@
 		A2DEB2B324DCBA6900298B31 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2B224DCBA6900298B31 /* LocationData.swift */; };
 		A2DEB2B524DCE8CD00298B31 /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */; };
 		A2DEB2B924DCF71300298B31 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2B824DCF71300298B31 /* Keys.swift */; };
+		A2E01DCB24DDC86D00E96B4B /* RestaurantAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E01DCA24DDC86D00E96B4B /* RestaurantAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		A2DEB2B224DCBA6900298B31 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
 		A2DEB2B824DCF71300298B31 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		A2E01DCA24DDC86D00E96B4B /* RestaurantAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				A2DEB2AF24DCB61000298B31 /* NetworkManager.swift */,
 				A2DEB2B224DCBA6900298B31 /* LocationData.swift */,
 				A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */,
+				A2E01DCA24DDC86D00E96B4B /* RestaurantAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2DEB2B324DCBA6900298B31 /* LocationData.swift in Sources */,
+				A2E01DCB24DDC86D00E96B4B /* RestaurantAnnotation.swift in Sources */,
 				A211B09D24D9102800F22907 /* AppDelegate.swift in Sources */,
 				A2A03CF424D91B8B002DC15A /* RestaurantCardView.swift in Sources */,
 				A216A22424D9DCB00037CE4B /* MapView.swift in Sources */,
