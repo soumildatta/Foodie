@@ -11,9 +11,12 @@ import SwiftUI
 struct ContentView: View {
     
     @State var isPresentingModal = false
+    @ObservedObject var networkManager = NetworkManager()
     
     var body: some View {
-        VStack(alignment: .center) {
+        print(networkManager.$restaurants)
+        
+        return VStack(alignment: .center) {
             Text("Foodie")
                 .font(.system(size: 50))
                 .fontWeight(.bold)
@@ -25,14 +28,23 @@ struct ContentView: View {
                     .padding()
                 Spacer()
             }
-            List {
+//            List(networkManager.restaurants) { item in
+//                VStack {
+//                    Text(item.restaurant.name)
+//                    Text(item.restaurant.location.address)
+//                    Text(String(item.restaurant.price_range))
+//                    //                        Text(location.entity_type)
+//                }
+//            }
+            List(networkManager.restaurants) { data in
                 Button(action: {
                     self.isPresentingModal.toggle()
                 }) {
-                    RestaurantCardView(locationString: "Oxford, MS", restaurantName: "Ajax Diner")
+                    RestaurantCardView(locationString: data.restaurant.location.address, restaurantName: data.restaurant.name)
                 }
             }
             .onAppear {
+                self.networkManager.fetchRestaurantData()
                 UITableView.appearance().separatorStyle = .none
             }
             .sheet(isPresented: $isPresentingModal, content: {

@@ -16,11 +16,12 @@ struct RestaurantCardView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
+                Text(restaurantName)
+                .font(.title)
+                .fontWeight(.semibold)
+                    .padding(.bottom, 8)
                 Text(locationString)
                     .font(.subheadline).fontWeight(.semibold).foregroundColor(.secondary)
-                Text(restaurantName)
-                    .font(.title)
-                    .fontWeight(.semibold)
             }
             Spacer()
         }
@@ -30,6 +31,7 @@ struct RestaurantCardView: View {
         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1))
         .clipped()
         .shadow(radius: 4)
+        .padding(.vertical, 5)
     }
 }
 
