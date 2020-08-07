@@ -17,6 +17,10 @@
 		A216A22624D9E0790037CE4B /* RestaurantModalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A216A22524D9E0790037CE4B /* RestaurantModalInfo.swift */; };
 		A216A22824D9E57D0037CE4B /* RestaurantModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A216A22724D9E57D0037CE4B /* RestaurantModal.swift */; };
 		A2A03CF424D91B8B002DC15A /* RestaurantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A03CF324D91B8B002DC15A /* RestaurantCardView.swift */; };
+		A2DEB2B024DCB61000298B31 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2AF24DCB61000298B31 /* NetworkManager.swift */; };
+		A2DEB2B324DCBA6900298B31 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2B224DCBA6900298B31 /* LocationData.swift */; };
+		A2DEB2B524DCE8CD00298B31 /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */; };
+		A2DEB2B924DCF71300298B31 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2B824DCF71300298B31 /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		A216A22524D9E0790037CE4B /* RestaurantModalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModalInfo.swift; sourceTree = "<group>"; };
 		A216A22724D9E57D0037CE4B /* RestaurantModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModal.swift; sourceTree = "<group>"; };
 		A2A03CF324D91B8B002DC15A /* RestaurantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardView.swift; sourceTree = "<group>"; };
+		A2DEB2AF24DCB61000298B31 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A2DEB2B224DCBA6900298B31 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
+		A2DEB2B824DCF71300298B31 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +74,14 @@
 			children = (
 				A211B09C24D9102800F22907 /* AppDelegate.swift */,
 				A211B09E24D9102800F22907 /* SceneDelegate.swift */,
+				A2DEB2B124DCB61500298B31 /* Models */,
 				A211B0A024D9102800F22907 /* ContentView.swift */,
 				A211B0A224D9102800F22907 /* Assets.xcassets */,
 				A211B0A724D9102800F22907 /* LaunchScreen.storyboard */,
 				A211B0AA24D9102800F22907 /* Info.plist */,
 				A211B0A424D9102800F22907 /* Preview Content */,
 				A216A22224D9DC870037CE4B /* Supporting Views */,
+				A2DEB2B824DCF71300298B31 /* Keys.swift */,
 			);
 			path = Foodie;
 			sourceTree = "<group>";
@@ -93,6 +103,16 @@
 				A216A22724D9E57D0037CE4B /* RestaurantModal.swift */,
 			);
 			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
+		A2DEB2B124DCB61500298B31 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2DEB2AF24DCB61000298B31 /* NetworkManager.swift */,
+				A2DEB2B224DCBA6900298B31 /* LocationData.swift */,
+				A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,10 +186,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2DEB2B324DCBA6900298B31 /* LocationData.swift in Sources */,
 				A211B09D24D9102800F22907 /* AppDelegate.swift in Sources */,
 				A2A03CF424D91B8B002DC15A /* RestaurantCardView.swift in Sources */,
 				A216A22424D9DCB00037CE4B /* MapView.swift in Sources */,
+				A2DEB2B924DCF71300298B31 /* Keys.swift in Sources */,
+				A2DEB2B024DCB61000298B31 /* NetworkManager.swift in Sources */,
 				A211B09F24D9102800F22907 /* SceneDelegate.swift in Sources */,
+				A2DEB2B524DCE8CD00298B31 /* RestaurantData.swift in Sources */,
 				A216A22624D9E0790037CE4B /* RestaurantModalInfo.swift in Sources */,
 				A211B0A124D9102800F22907 /* ContentView.swift in Sources */,
 				A216A22824D9E57D0037CE4B /* RestaurantModal.swift in Sources */,
