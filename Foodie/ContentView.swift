@@ -14,7 +14,7 @@ struct ContentView: View {
     @ObservedObject var networkManager = NetworkManager()
     
     var body: some View {
-        return VStack(alignment: .center) {
+        VStack(alignment: .center) {
             Text("Foodie")
                 .font(.system(size: 50))
                 .fontWeight(.bold)
@@ -29,19 +29,22 @@ struct ContentView: View {
                     .padding()
                 Spacer()
             }
-            List(networkManager.restaurants) { data in
-                Button(action: {
-                    self.isPresentingModal.toggle()
-                }) {
-                    RestaurantCardView(
-                        locationString: data.restaurant.location.address,
-                        restaurantName: data.restaurant.name,
-                        cuisineType: data.restaurant.cuisines,
-                        timings: data.restaurant.timings,
-                        priceRange: data.restaurant.price_range,
-                        latitude: data.restaurant.location.latitude,
-                        longitude: data.restaurant.location.longitude
-                    )
+            ZStack {
+                
+                List(networkManager.restaurants) { data in
+                    Button(action: {
+                        self.isPresentingModal.toggle()
+                    }) {
+                        RestaurantCardView(
+                            locationString: data.restaurant.location.address,
+                            restaurantName: data.restaurant.name,
+                            cuisineType: data.restaurant.cuisines,
+                            timings: data.restaurant.timings,
+                            priceRange: data.restaurant.price_range,
+                            latitude: data.restaurant.location.latitude,
+                            longitude: data.restaurant.location.longitude
+                        )
+                    }
                 }
             }
         }.onAppear {
