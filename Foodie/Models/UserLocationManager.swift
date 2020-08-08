@@ -9,23 +9,40 @@
 import Foundation
 import CoreLocation
 
-struct UserLocationManager {
-    let locationManager = CLLocationManager()
+class UserLocationManager: NSObject, CLLocationManagerDelegate {
+    private let locationManager = CLLocationManager()
+    // - API
+    public var exposedLocation: CLLocation? {
+        return self.locationManager.location
+    }
     
-    func getLocationCoordinates() -> CLLocationCoordinate2D {
-        let status = CLLocationManager.authorizationStatus()
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
-        
-        var location: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 50.0, longitude: 50.0)
-        
-        if status == .authorizedAlways || status == .authorizedWhenInUse {
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            
-            location = locationManager.location!.coordinate
-            
+    override init() {
+        super.init()
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+    }
+}
+
+// MARK: - Get location name
+extension UserLocationManager {
+    func getPlace(for location: CLLocation, completion: @escaping (CLPlacemark?) -> Void) {
+        // important
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if error == nil {
+                guard let placemark = placemarks?[0] else {
+                    print("*** Error in \(#function): placemark is nil")
+                    completion(nil)
+                    return
+                }
+                
+                completion(placemark)
+            } else {
+                print("*** Error in \(#function): \(error!.localizedDescription)")
+                completion(nil)
+                return
+            }
         }
-        
-        return location
     }
 }
