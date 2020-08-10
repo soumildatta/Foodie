@@ -31,30 +31,35 @@ struct ContentView: View {
                         .padding()
                     Spacer()
                 }
+                Spacer()
                 ZStack {
-                    List(networkManager.restaurants) { data in
-                        Button(action: {
-                            self.isPresentingModal.toggle()
-                        }) {
-                            RestaurantCardView(
-                                locationString: data.restaurant.location.address,
-                                restaurantName: data.restaurant.name,
-                                cuisineType: data.restaurant.cuisines,
-                                timings: data.restaurant.timings,
-                                priceRange: data.restaurant.price_range,
-                                rating: data.restaurant.user_rating.aggregate_rating,
-                                numOfVotes: data.restaurant.user_rating.votes,
-                                phoneNumber: data.restaurant.phone_numbers,
-                                latitude: data.restaurant.location.latitude,
-                                longitude: data.restaurant.location.longitude
-                            )
+                    if (networkManager.exposedLocationTrue) {
+                        List(networkManager.restaurants) { data in
+                            Button(action: {
+                                self.isPresentingModal.toggle()
+                            }) {
+                                RestaurantCardView(
+                                    locationString: data.restaurant.location.address,
+                                    restaurantName: data.restaurant.name,
+                                    cuisineType: data.restaurant.cuisines,
+                                    timings: data.restaurant.timings,
+                                    priceRange: data.restaurant.price_range,
+                                    rating: data.restaurant.user_rating.aggregate_rating,
+                                    numOfVotes: data.restaurant.user_rating.votes,
+                                    phoneNumber: data.restaurant.phone_numbers,
+                                    latitude: data.restaurant.location.latitude,
+                                    longitude: data.restaurant.location.longitude
+                                )
+                            }
                         }
+                        if self.showSpinner {
+                            SpinnerView()
+                                .onAppear(perform: delayText)
+                        }
+                    } else {
+                        Text("Location services for this app are turned off. Please turn them on through the system settings.").padding(.bottom, 300)
                     }
                 }
-            }
-            if self.showSpinner {
-                SpinnerView()
-                    .onAppear(perform: delayText)
             }
         }.onAppear {
             self.networkManager.fetchRestaurantData()

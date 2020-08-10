@@ -11,6 +11,7 @@ import CoreLocation
 
 class NetworkManager: ObservableObject {
     var location = [Location]()
+    @Published var exposedLocationTrue = true
     @Published var restaurants = [RestaurantOuter]()
     
     // for user coordinates
@@ -20,6 +21,8 @@ class NetworkManager: ObservableObject {
         
         guard let exposedLocation = locationManager.exposedLocation else {
             print("*** Error in \(#function): exposedLocation is nil")
+            exposedLocationTrue = false
+            print(exposedLocationTrue)
             return
         }
         
