@@ -18,6 +18,7 @@ struct RestaurantCardView: View {
     var priceRange: Int
     var rating: String
     var numOfVotes: Int
+    var phoneNumber: String
     
     var latitude: String
     var longitude: String
@@ -58,6 +59,7 @@ struct RestaurantCardView: View {
                 priceRange: self.priceRange,
                 rating: self.rating,
                 numOfVotes: self.numOfVotes,
+                phoneNumber: self.phoneNumber,
                 latitude: self.latitude,
                 longitude: self.longitude)
         })
@@ -75,6 +77,7 @@ struct RestaurantCardView_Previews: PreviewProvider {
             priceRange: 2,
             rating: "4.5",
             numOfVotes: 18,
+            phoneNumber: "(xxx) xxx xxxx",
             latitude: "34.3665750000",
             longitude: "-89.5193210000"
         )

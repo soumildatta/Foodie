@@ -16,6 +16,7 @@ struct RestaurantModalInfo: View {
     var priceRance: Int
     var rating: String
     var numOfVotes: Int
+    var phoneNumber: String
     
     var body: some View {
         VStack {
@@ -59,6 +60,12 @@ struct RestaurantModalInfo: View {
                     Text(String(repeating: "$", count: priceRance))
                         .foregroundColor(Color(red: 0, green: 0.6275, blue: 0.0196))
                 }.padding([.top, .horizontal])
+                HStack {
+                    Text("Phone Number: ")
+                        .fontWeight(.medium)
+                    Spacer()
+                    Text(phoneNumber.components(separatedBy: ", ")[0])
+                }.padding([.top, .horizontal])
             }.padding()
             Spacer()
             
@@ -68,6 +75,6 @@ struct RestaurantModalInfo: View {
 
 struct RestaurantModalInfo_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantModalInfo(restaurantName: "Ajax Diner", restaurantAddress: "118 Courthouse Sq, Oxford 38655", cuisineType: "Burger, Diner, Southern", timings: "7 AM to 1:30 PM (Mon-Fri),8 AM to 3 PM (Sat-Sun)", priceRance: 2, rating: "3.5", numOfVotes: 18)
+        RestaurantModalInfo(restaurantName: "Ajax Diner", restaurantAddress: "118 Courthouse Sq, Oxford 38655", cuisineType: "Burger, Diner, Southern", timings: "7 AM to 1:30 PM (Mon-Fri),8 AM to 3 PM (Sat-Sun)", priceRance: 2, rating: "3.5", numOfVotes: 18, phoneNumber: "(xxx) xxx xxxx")
     }
 }

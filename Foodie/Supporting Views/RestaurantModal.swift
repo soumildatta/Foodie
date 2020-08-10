@@ -21,6 +21,7 @@ struct RestaurantModal: View {
     var priceRange: Int
     var rating: String
     var numOfVotes: Int
+    var phoneNumber: String
     
     var latitude: String
     var longitude: String
@@ -32,9 +33,9 @@ struct RestaurantModal: View {
                 longitude: longitude,
                 title: restaurantName,
                 locationName: restaurantAddress)
-                .frame(height: 400)
+                .frame(height: 350)
                 .edgesIgnoringSafeArea(.top)
-            RestaurantModalInfo(restaurantName: restaurantName, restaurantAddress: restaurantAddress, cuisineType: cuisineType, timings: timings, priceRance: priceRange, rating: rating, numOfVotes: numOfVotes)
+            RestaurantModalInfo(restaurantName: restaurantName, restaurantAddress: restaurantAddress, cuisineType: cuisineType, timings: timings, priceRance: priceRange, rating: rating, numOfVotes: numOfVotes, phoneNumber: phoneNumber)
             Spacer()
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
@@ -54,6 +55,6 @@ struct RestaurantModal: View {
 
 struct RestaurantModal_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantModal(restaurantName: "Restaurant Name", restaurantAddress: "Location", cuisineType: "Is", timings: "Something", priceRange: 4, rating: "4.5", numOfVotes: 18, latitude: "34.3665750000", longitude: "-89.5193210000")
+        RestaurantModal(restaurantName: "Restaurant Name", restaurantAddress: "Location", cuisineType: "Is", timings: "This is a double line address to test word truncation", priceRange: 4, rating: "4.5", numOfVotes: 18, phoneNumber: "(xxx) xxx xxxx", latitude: "34.3665750000", longitude: "-89.5193210000")
     }
 }
