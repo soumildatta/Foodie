@@ -48,6 +48,7 @@ struct ContentView: View {
                                         rating: data.restaurant.user_rating.aggregate_rating,
                                         numOfVotes: data.restaurant.user_rating.votes,
                                         phoneNumber: data.restaurant.phone_numbers,
+                                        url: data.restaurant.url,
                                         latitude: data.restaurant.location.latitude,
                                         longitude: data.restaurant.location.longitude
                                     )

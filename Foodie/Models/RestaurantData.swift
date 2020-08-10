@@ -22,6 +22,7 @@ struct RestaurantOuter: Decodable, Identifiable {
 struct Restaurant: Decodable {
     var id: String
     var name: String
+    var url: String
     var location: RestaurantLocation
     var cuisines: String
     var price_range: Int

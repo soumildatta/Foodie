@@ -42,7 +42,7 @@ struct RestaurantModalInfo: View {
                         .fontWeight(.medium)
                     Spacer()
                     Text(cuisineType)
-                }.padding([.top, .horizontal])
+                }.padding(.horizontal)
                 HStack {
                     Text("Pricing: ")
                         .fontWeight(.medium)

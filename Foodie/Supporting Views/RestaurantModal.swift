@@ -14,6 +14,8 @@ struct RestaurantModal: View {
     // https://stackoverflow.com/questions/56517400/swiftui-dismiss-modal
     @Environment(\.presentationMode) private var presentationMode
     
+    @State private var isPresentingWebView = false
+    
     var restaurantName: String
     var restaurantAddress: String
     var cuisineType: String
@@ -21,6 +23,7 @@ struct RestaurantModal: View {
     var rating: String
     var numOfVotes: Int
     var phoneNumber: String
+    var url: String?
     
     var latitude: String
     var longitude: String
@@ -35,7 +38,21 @@ struct RestaurantModal: View {
                 .frame(height: 350)
                 .edgesIgnoringSafeArea(.top)
             RestaurantModalInfo(restaurantName: restaurantName, restaurantAddress: restaurantAddress, cuisineType: cuisineType, priceRance: priceRange, rating: rating, numOfVotes: numOfVotes, phoneNumber: phoneNumber)
-            Spacer()
+            Button(action: {
+                self.isPresentingWebView.toggle()
+            }) {
+                Text("More Info")
+                    .font(.system(size: 18))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .padding(.horizontal, 30)
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("PastelBlue"), Color("FoamGreen")]), startPoint: .leading, endPoint: .trailing))
+                    .cornerRadius(10)
+            }
+            .sheet(isPresented: $isPresentingWebView) {
+                RestaurantDetailWebView(url: self.url)
+            }
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
             }) {
