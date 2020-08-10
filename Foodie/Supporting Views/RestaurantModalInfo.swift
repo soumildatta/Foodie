@@ -64,6 +64,7 @@ struct RestaurantModalInfo: View {
                     Text("Phone Number: ")
                         .fontWeight(.medium)
                     Spacer()
+                    // get the first available phone number by splitting string by comma
                     Text(phoneNumber.components(separatedBy: ", ")[0])
                 }.padding([.top, .horizontal])
             }.padding()
