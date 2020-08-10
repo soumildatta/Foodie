@@ -14,7 +14,6 @@ struct RestaurantCardView: View {
     var locationString: String
     var restaurantName: String
     var cuisineType: String
-    var timings: String
     var priceRange: Int
     var rating: String
     var numOfVotes: Int
@@ -55,7 +54,6 @@ struct RestaurantCardView: View {
                 restaurantName: self.restaurantName,
                 restaurantAddress: self.locationString,
                 cuisineType: self.cuisineType,
-                timings: self.timings,
                 priceRange: self.priceRange,
                 rating: self.rating,
                 numOfVotes: self.numOfVotes,
@@ -73,7 +71,6 @@ struct RestaurantCardView_Previews: PreviewProvider {
             locationString: "Chick-Fil-A Avenue",
             restaurantName: "Chick-Fil-A",
             cuisineType: "Fast Food",
-            timings: "All day every day",
             priceRange: 2,
             rating: "4.5",
             numOfVotes: 18,

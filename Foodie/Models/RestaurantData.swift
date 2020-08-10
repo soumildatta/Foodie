@@ -24,7 +24,6 @@ struct Restaurant: Decodable {
     var name: String
     var location: RestaurantLocation
     var cuisines: String
-    var timings: String
     var price_range: Int
     var user_rating: UserRating
     var phone_numbers: String

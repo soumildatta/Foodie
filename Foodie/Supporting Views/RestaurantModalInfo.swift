@@ -12,7 +12,6 @@ struct RestaurantModalInfo: View {
     var restaurantName: String
     var restaurantAddress: String
     var cuisineType: String
-    var timings: String
     var priceRance: Int
     var rating: String
     var numOfVotes: Int
@@ -45,15 +44,6 @@ struct RestaurantModalInfo: View {
                     Text(cuisineType)
                 }.padding([.top, .horizontal])
                 HStack {
-                    Text("Timings: ")
-                        .fontWeight(.medium)
-                    Spacer()
-                    Text(timings)
-                        .font(.system(size: 14))
-                        .multilineTextAlignment(.trailing)
-                        .padding(.leading)
-                }.padding([.top, .horizontal])
-                HStack {
                     Text("Pricing: ")
                         .fontWeight(.medium)
                     Spacer()
@@ -76,6 +66,6 @@ struct RestaurantModalInfo: View {
 
 struct RestaurantModalInfo_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantModalInfo(restaurantName: "Ajax Diner", restaurantAddress: "118 Courthouse Sq, Oxford 38655", cuisineType: "Burger, Diner, Southern", timings: "7 AM to 1:30 PM (Mon-Fri),8 AM to 3 PM (Sat-Sun)", priceRance: 2, rating: "3.5", numOfVotes: 18, phoneNumber: "(xxx) xxx xxxx")
+        RestaurantModalInfo(restaurantName: "Ajax Diner", restaurantAddress: "118 Courthouse Sq, Oxford 38655", cuisineType: "Burger, Diner, Southern", priceRance: 2, rating: "3.5", numOfVotes: 18, phoneNumber: "(xxx) xxx xxxx")
     }
 }

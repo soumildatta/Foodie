@@ -12,6 +12,7 @@ import CoreLocation
 class NetworkManager: ObservableObject {
     var location = [Location]()
     @Published var exposedLocationTrue = true
+    @Published var placemarkString = ""
     @Published var restaurants = [RestaurantOuter]()
     
     // for user coordinates
@@ -32,6 +33,7 @@ class NetworkManager: ObservableObject {
             
             if let town = placemark.locality {
                 if let state = placemark.administrativeArea {
+                    self.placemarkString = "\(town), \(state)"
                     
                     let latitude = placemark.location?.coordinate.latitude
                     let longitude = placemark.location?.coordinate.longitude

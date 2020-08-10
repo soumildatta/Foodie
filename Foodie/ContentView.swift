@@ -23,33 +23,35 @@ struct ContentView: View {
                     .padding(.bottom)
                 Text("🍷🌮🥗🌯🥘🍲🍱🍜🍣🍛🍷")
                     .font(.system(size: 27))
-                HStack {
-                    Spacer()
-                    Text("top restaurants near you".uppercased())
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.gray)
-                        .padding()
-                    Spacer()
-                }
                 Spacer()
                 ZStack {
                     if (networkManager.exposedLocationTrue) {
-                        List(networkManager.restaurants) { data in
-                            Button(action: {
-                                self.isPresentingModal.toggle()
-                            }) {
-                                RestaurantCardView(
-                                    locationString: data.restaurant.location.address,
-                                    restaurantName: data.restaurant.name,
-                                    cuisineType: data.restaurant.cuisines,
-                                    timings: data.restaurant.timings,
-                                    priceRange: data.restaurant.price_range,
-                                    rating: data.restaurant.user_rating.aggregate_rating,
-                                    numOfVotes: data.restaurant.user_rating.votes,
-                                    phoneNumber: data.restaurant.phone_numbers,
-                                    latitude: data.restaurant.location.latitude,
-                                    longitude: data.restaurant.location.longitude
-                                )
+                        VStack {
+                            HStack {
+                                Spacer()
+                                Text("top restaurants near \(networkManager.placemarkString)".uppercased())
+                                    .fontWeight(.medium)
+                                    .font(.system(size: 14))
+                                    .foregroundColor(Color.gray)
+                                    .padding(.top, 6)
+                                Spacer()
+                            }
+                            List(networkManager.restaurants) { data in
+                                Button(action: {
+                                    self.isPresentingModal.toggle()
+                                }) {
+                                    RestaurantCardView(
+                                        locationString: data.restaurant.location.address,
+                                        restaurantName: data.restaurant.name,
+                                        cuisineType: data.restaurant.cuisines,
+                                        priceRange: data.restaurant.price_range,
+                                        rating: data.restaurant.user_rating.aggregate_rating,
+                                        numOfVotes: data.restaurant.user_rating.votes,
+                                        phoneNumber: data.restaurant.phone_numbers,
+                                        latitude: data.restaurant.location.latitude,
+                                        longitude: data.restaurant.location.longitude
+                                    )
+                                }
                             }
                         }
                         if self.showSpinner {
