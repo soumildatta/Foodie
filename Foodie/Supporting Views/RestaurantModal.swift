@@ -19,6 +19,8 @@ struct RestaurantModal: View {
     var cuisineType: String
     var timings: String
     var priceRange: Int
+    var rating: String
+    var numOfVotes: Int
     
     var latitude: String
     var longitude: String
@@ -32,7 +34,7 @@ struct RestaurantModal: View {
                 locationName: restaurantAddress)
                 .frame(height: 400)
                 .edgesIgnoringSafeArea(.top)
-            RestaurantModalInfo(restaurantName: restaurantName, restaurantAddress: restaurantAddress, cuisineType: cuisineType, timings: timings, priceRance: priceRange)
+            RestaurantModalInfo(restaurantName: restaurantName, restaurantAddress: restaurantAddress, cuisineType: cuisineType, timings: timings, priceRance: priceRange, rating: rating, numOfVotes: numOfVotes)
             Spacer()
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
@@ -43,7 +45,7 @@ struct RestaurantModal: View {
                     .foregroundColor(.white)
                     .padding(10)
                     .padding(.horizontal, 50)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("PastelBlue"), Color("Lavender")]), startPoint: .leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("PastelBlue"), Color("FoamGreen")]), startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(10)
             }.padding()
         }
@@ -52,6 +54,6 @@ struct RestaurantModal: View {
 
 struct RestaurantModal_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantModal(restaurantName: "Item", restaurantAddress: "There", cuisineType: "Is", timings: "Something", priceRange: 2, latitude: "34.3665750000", longitude: "-89.5193210000")
+        RestaurantModal(restaurantName: "Restaurant Name", restaurantAddress: "Location", cuisineType: "Is", timings: "Something", priceRange: 4, rating: "4.5", numOfVotes: 18, latitude: "34.3665750000", longitude: "-89.5193210000")
     }
 }

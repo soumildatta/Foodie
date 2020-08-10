@@ -16,6 +16,8 @@ struct RestaurantCardView: View {
     var cuisineType: String
     var timings: String
     var priceRange: Int
+    var rating: String
+    var numOfVotes: Int
     
     var latitude: String
     var longitude: String
@@ -44,9 +46,9 @@ struct RestaurantCardView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(
                         Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1))
-            .clipped()
-            .shadow(radius: 4)
-            .padding(.vertical, 5)
+                .clipped()
+                .shadow(radius: 4)
+                .padding(.vertical, 5)
         }.sheet(isPresented: $isPresentingModal, content: {
             RestaurantModal(
                 restaurantName: self.restaurantName,
@@ -54,6 +56,8 @@ struct RestaurantCardView: View {
                 cuisineType: self.cuisineType,
                 timings: self.timings,
                 priceRange: self.priceRange,
+                rating: self.rating,
+                numOfVotes: self.numOfVotes,
                 latitude: self.latitude,
                 longitude: self.longitude)
         })
@@ -69,6 +73,8 @@ struct RestaurantCardView_Previews: PreviewProvider {
             cuisineType: "Fast Food",
             timings: "All day every day",
             priceRange: 2,
+            rating: "4.5",
+            numOfVotes: 18,
             latitude: "34.3665750000",
             longitude: "-89.5193210000"
         )

@@ -26,10 +26,16 @@ struct Restaurant: Decodable {
     var cuisines: String
     var timings: String
     var price_range: Int
+    var user_rating: UserRating
 }
 
 struct RestaurantLocation: Decodable {
     var address: String
     var latitude: String
     var longitude: String
+}
+
+struct UserRating: Decodable {
+    var aggregate_rating: String
+    var votes: Int
 }

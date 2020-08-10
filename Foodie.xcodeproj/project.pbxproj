@@ -17,6 +17,7 @@
 		A216A22624D9E0790037CE4B /* RestaurantModalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A216A22524D9E0790037CE4B /* RestaurantModalInfo.swift */; };
 		A216A22824D9E57D0037CE4B /* RestaurantModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A216A22724D9E57D0037CE4B /* RestaurantModal.swift */; };
 		A2A03CF424D91B8B002DC15A /* RestaurantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A03CF324D91B8B002DC15A /* RestaurantCardView.swift */; };
+		A2B6D5E624DE688700095B39 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B6D5E524DE688700095B39 /* SpinnerView.swift */; };
 		A2DEB2B024DCB61000298B31 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2AF24DCB61000298B31 /* NetworkManager.swift */; };
 		A2DEB2B324DCBA6900298B31 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2B224DCBA6900298B31 /* LocationData.swift */; };
 		A2DEB2B524DCE8CD00298B31 /* RestaurantData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */; };
@@ -38,6 +39,7 @@
 		A216A22524D9E0790037CE4B /* RestaurantModalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModalInfo.swift; sourceTree = "<group>"; };
 		A216A22724D9E57D0037CE4B /* RestaurantModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModal.swift; sourceTree = "<group>"; };
 		A2A03CF324D91B8B002DC15A /* RestaurantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardView.swift; sourceTree = "<group>"; };
+		A2B6D5E524DE688700095B39 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		A2DEB2AF24DCB61000298B31 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A2DEB2B224DCBA6900298B31 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		A2DEB2B424DCE8CD00298B31 /* RestaurantData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantData.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				A216A22324D9DCB00037CE4B /* MapView.swift */,
 				A216A22524D9E0790037CE4B /* RestaurantModalInfo.swift */,
 				A216A22724D9E57D0037CE4B /* RestaurantModal.swift */,
+				A2B6D5E524DE688700095B39 /* SpinnerView.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				A2A03CF424D91B8B002DC15A /* RestaurantCardView.swift in Sources */,
 				A216A22424D9DCB00037CE4B /* MapView.swift in Sources */,
 				A2DEB2B924DCF71300298B31 /* Keys.swift in Sources */,
+				A2B6D5E624DE688700095B39 /* SpinnerView.swift in Sources */,
 				A2DEB2B024DCB61000298B31 /* NetworkManager.swift in Sources */,
 				A2E01DCD24DDD87300E96B4B /* UserLocationManager.swift in Sources */,
 				A211B09F24D9102800F22907 /* SceneDelegate.swift in Sources */,

@@ -14,6 +14,8 @@ struct RestaurantModalInfo: View {
     var cuisineType: String
     var timings: String
     var priceRance: Int
+    var rating: String
+    var numOfVotes: Int
     
     var body: some View {
         VStack {
@@ -24,6 +26,15 @@ struct RestaurantModalInfo: View {
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundColor(.secondary)
+            
+            Text("Customer Rating")
+                .fontWeight(.semibold)
+                .font(.system(size: 19))
+                .padding(.top)
+            Text(rating)
+                .font(.system(size: 30))
+                .foregroundColor(Color(red: 0, green: 0.6275, blue: 0.0196))
+            Text("\(String(numOfVotes)) votes").font(.system(size: 14)).fontWeight(.semibold).foregroundColor(.secondary)
             
             VStack {
                 HStack {
@@ -45,8 +56,8 @@ struct RestaurantModalInfo: View {
                     Text("Pricing: ")
                         .fontWeight(.medium)
                     Spacer()
-                    Text(String(priceRance))
-                        .foregroundColor(.green)
+                    Text(String(repeating: "$", count: priceRance))
+                        .foregroundColor(Color(red: 0, green: 0.6275, blue: 0.0196))
                 }.padding([.top, .horizontal])
             }.padding()
             Spacer()
@@ -57,6 +68,6 @@ struct RestaurantModalInfo: View {
 
 struct RestaurantModalInfo_Previews: PreviewProvider {
     static var previews: some View {
-        RestaurantModalInfo(restaurantName: "Ajax Diner", restaurantAddress: "118 Courthouse Sq, Oxford 38655", cuisineType: "Burger, Diner, Southern", timings: "7 AM to 1:30 PM (Mon-Fri),8 AM to 3 PM (Sat-Sun)", priceRance: 2)
+        RestaurantModalInfo(restaurantName: "Ajax Diner", restaurantAddress: "118 Courthouse Sq, Oxford 38655", cuisineType: "Burger, Diner, Southern", timings: "7 AM to 1:30 PM (Mon-Fri),8 AM to 3 PM (Sat-Sun)", priceRance: 2, rating: "3.5", numOfVotes: 18)
     }
 }

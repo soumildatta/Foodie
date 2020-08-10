@@ -30,7 +30,6 @@ struct ContentView: View {
                 Spacer()
             }
             ZStack {
-                
                 List(networkManager.restaurants) { data in
                     Button(action: {
                         self.isPresentingModal.toggle()
@@ -41,6 +40,8 @@ struct ContentView: View {
                             cuisineType: data.restaurant.cuisines,
                             timings: data.restaurant.timings,
                             priceRange: data.restaurant.price_range,
+                            rating: data.restaurant.user_rating.aggregate_rating,
+                            numOfVotes: data.restaurant.user_rating.votes,
                             latitude: data.restaurant.location.latitude,
                             longitude: data.restaurant.location.longitude
                         )
