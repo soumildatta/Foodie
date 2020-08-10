@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var isPresentingModal = false
     @State var showSpinner = true
     @ObservedObject var networkManager = NetworkManager()
     
@@ -37,8 +36,8 @@ struct ContentView: View {
                                 Spacer()
                             }
                             List(networkManager.restaurants) { data in
+                                // use button to prevent entire list row from being highlighted when clicked
                                 Button(action: {
-                                    self.isPresentingModal.toggle()
                                 }) {
                                     RestaurantCardView(
                                         locationString: data.restaurant.location.address,

@@ -47,7 +47,7 @@ struct RestaurantModal: View {
                     .foregroundColor(.white)
                     .padding(10)
                     .padding(.horizontal, 30)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("PastelBlue"), Color("FoamGreen")]), startPoint: .leading, endPoint: .trailing))
+                    .background(Color("PastelBlue"))
                     .cornerRadius(10)
             }
             .sheet(isPresented: $isPresentingWebView) {
@@ -62,7 +62,7 @@ struct RestaurantModal: View {
                     .foregroundColor(.white)
                     .padding(10)
                     .padding(.horizontal, 50)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("PastelBlue"), Color("FoamGreen")]), startPoint: .leading, endPoint: .trailing))
+                    .background(LinearGradient(gradient: Gradient(colors: [Color("DeepSeaBlue"), Color("PastelDeepBlue")]), startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(10)
             }.padding()
         }
