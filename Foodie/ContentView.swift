@@ -28,7 +28,7 @@ struct ContentView: View {
                         VStack {
                             HStack {
                                 Spacer()
-                                Text("top restaurants near \(networkManager.placemarkString)".uppercased())
+                                Text("top restaurants around \(networkManager.placemarkString)".uppercased())
                                     .fontWeight(.medium)
                                     .font(.system(size: 14))
                                     .foregroundColor(Color.gray)

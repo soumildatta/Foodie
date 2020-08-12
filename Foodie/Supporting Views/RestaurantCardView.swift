@@ -44,12 +44,11 @@ struct RestaurantCardView: View {
             .background(Color.white)
             .cornerRadius(10)
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(
-                        Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1))
-                .clipped()
-                .shadow(radius: 4)
-                .padding(.vertical, 5)
+                RoundedRectangle(cornerRadius: 10).stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1)
+            )
+            .clipped()
+            .shadow(radius: 4)
+            .padding(.vertical, 5)
         }.sheet(isPresented: $isPresentingModal, content: {
             RestaurantModal(
                 restaurantName: self.restaurantName,
@@ -61,9 +60,9 @@ struct RestaurantCardView: View {
                 phoneNumber: self.phoneNumber,
                 url: self.url,
                 latitude: self.latitude,
-                longitude: self.longitude)
+                longitude: self.longitude
+            )
         })
-        
     }
 }
 

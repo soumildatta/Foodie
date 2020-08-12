@@ -27,19 +27,16 @@ class UserLocationManager: NSObject, CLLocationManagerDelegate {
 // MARK: - Get location name
 extension UserLocationManager {
     func getPlace(for location: CLLocation, completion: @escaping (CLPlacemark?) -> Void) {
-        // important
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
             if error == nil {
                 guard let placemark = placemarks?[0] else {
-                    print("*** Error in \(#function): placemark is nil")
                     completion(nil)
                     return
                 }
                 
                 completion(placemark)
             } else {
-                print("*** Error in \(#function): \(error!.localizedDescription)")
                 completion(nil)
                 return
             }

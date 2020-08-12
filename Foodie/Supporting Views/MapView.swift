@@ -30,14 +30,11 @@ struct MapView: UIViewRepresentable {
 
         uiView.showsUserLocation = true
         let status = CLLocationManager.authorizationStatus()
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
         
         if status == .authorizedAlways || status == .authorizedWhenInUse {
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-//            let location: CLLocationCoordinate2D = locationManager.location!.coordinate
-            let span = MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.006)
+            
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
             let region = MKCoordinateRegion(center: coordinate, span: span)
             uiView.setRegion(region, animated: true)
             
@@ -46,8 +43,10 @@ struct MapView: UIViewRepresentable {
                 locationName: locationName,
                 coordinate: coordinate
             )
-
             uiView.addAnnotation(restaurant)
+
+            uiView.showAnnotations(uiView.annotations, animated: true)
+
         }
     }
 }
