@@ -41,7 +41,7 @@ struct RestaurantCardView: View {
                 Spacer()
             }
             .padding()
-            .background(Color.white)
+            .background(Color("CardBackground"))
             .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10).stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1)

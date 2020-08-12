@@ -50,6 +50,7 @@
 		A2DEB2B824DCF71300298B31 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		A2E01DCA24DDC86D00E96B4B /* RestaurantAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantAnnotation.swift; sourceTree = "<group>"; };
 		A2E01DCC24DDD87300E96B4B /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
+		A2FDB04524E3B46A000542CD /* Foodie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Foodie.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +83,7 @@
 		A211B09B24D9102800F22907 /* Foodie */ = {
 			isa = PBXGroup;
 			children = (
+				A2FDB04524E3B46A000542CD /* Foodie.entitlements */,
 				A211B09C24D9102800F22907 /* AppDelegate.swift */,
 				A211B09E24D9102800F22907 /* SceneDelegate.swift */,
 				A2DEB2B124DCB61500298B31 /* Models */,
@@ -352,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Foodie/Foodie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Foodie/Preview Content\"";
 				DEVELOPMENT_TEAM = B92V7D4935;
@@ -363,6 +366,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.soumildatta.Foodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -372,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Foodie/Foodie.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Foodie/Preview Content\"";
 				DEVELOPMENT_TEAM = B92V7D4935;
@@ -383,6 +388,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.soumildatta.Foodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
