@@ -46,7 +46,6 @@ struct MapView: UIViewRepresentable {
             uiView.addAnnotation(restaurant)
 
             uiView.showAnnotations(uiView.annotations, animated: true)
-
         }
     }
 }

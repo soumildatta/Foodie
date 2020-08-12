@@ -13,8 +13,8 @@ struct RestaurantModal: View {
     // environment variable presentationMode accessed
     // https://stackoverflow.com/questions/56517400/swiftui-dismiss-modal
     @Environment(\.presentationMode) private var presentationMode
-    
     @State private var isPresentingWebView = false
+    let mapManager = UserLocationManager()
     
     var restaurantName: String
     var restaurantAddress: String
@@ -38,33 +38,51 @@ struct RestaurantModal: View {
                 .frame(height: 350)
                 .edgesIgnoringSafeArea(.top)
             RestaurantModalInfo(restaurantName: restaurantName, restaurantAddress: restaurantAddress, cuisineType: cuisineType, priceRance: priceRange, rating: rating, numOfVotes: numOfVotes, phoneNumber: phoneNumber)
-            Button(action: {
-                self.isPresentingWebView.toggle()
-            }) {
-                Text("More Info")
-                    .font(.system(size: 18))
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .padding(.horizontal, 30)
-                    .background(Color("PastelBlue"))
-                    .cornerRadius(10)
-            }
-            .sheet(isPresented: $isPresentingWebView) {
-                RestaurantDetailWebView(url: self.url)
-            }
-            Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-            }) {
-                Text(/*@START_MENU_TOKEN@*/"Done"/*@END_MENU_TOKEN@*/)
-                    .font(.system(size: 18))
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .padding(.horizontal, 50)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color("DeepSeaBlue"), Color("PastelDeepBlue")]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(10)
-            }.padding()
+            
+            HStack {
+                Button(action: {
+                    self.mapManager.openMaps(forLatitude: self.latitude, forLongitude: self.longitude, locationName: self.restaurantName)
+                }) {
+                    Image(systemName: "map")
+                        .resizable().frame(width: 18, height: 18)
+                        .foregroundColor(.white)
+                        .padding(12.5)
+                        .padding(.horizontal, 12)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color("DeepSeaBlue"), Color("PastelDeepBlue")]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(10)
+                }.shadow(radius: 3)
+                .sheet(isPresented: $isPresentingWebView) {
+                    RestaurantDetailWebView(url: self.url)
+                }
+                
+                Button(action: {
+                    self.isPresentingWebView.toggle()
+                }) {
+                    Text("More Info")
+                        .font(.system(size: 18))
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(11)
+                        .padding(.horizontal, 30)
+                        .background(Color("PastelBlue"))
+                        .cornerRadius(10)
+                }.shadow(radius: 3)
+                .sheet(isPresented: $isPresentingWebView) {
+                    RestaurantDetailWebView(url: self.url)
+                }
+                
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "xmark")
+                        .resizable().frame(width: 18, height: 18)
+                        .foregroundColor(.white)
+                        .padding(12.5)
+                        .padding(.horizontal, 12)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color("DeepRed"), Color("Red")]), startPoint: .leading, endPoint: .topTrailing))
+                        .cornerRadius(10)
+                }.shadow(radius: 3)
+            }.padding(.bottom, 25)
         }
     }
 }

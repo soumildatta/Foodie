@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CoreLocation
+import MapKit
 
 class UserLocationManager: NSObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
@@ -41,5 +41,16 @@ extension UserLocationManager {
                 return
             }
         }
+    }
+    
+    func openMaps(forLatitude lat: String, forLongitude lon: String, locationName title: String) {
+        let latitude: CLLocationDegrees =  (lat as NSString).doubleValue
+        let longitude: CLLocationDegrees =  (lon as NSString).doubleValue
+        
+        let placemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        mapItem.name = "\(title)"
+        mapItem.openInMaps(launchOptions: launchOptions)
     }
 }

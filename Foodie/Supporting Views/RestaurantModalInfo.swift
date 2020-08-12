@@ -30,7 +30,7 @@ struct RestaurantModalInfo: View {
             Text("Customer Rating")
                 .fontWeight(.semibold)
                 .font(.system(size: 19))
-                .padding(.top)
+                .padding(.top, 8)
             Text(rating)
                 .font(.system(size: 30))
                 .foregroundColor(Color(red: 0, green: 0.6275, blue: 0.0196))
