@@ -4,10 +4,18 @@
 
 Foodie helps you find the best restaurants in your current area. Powered by the Zomato API, it presents up to date location on an interactive map, average customer rating, and other important information about each restaurant.
 
+<p>
+   <img height=500 src="https://github.com/soumildatta/Foodie/blob/master/FoodieDemo.gif"/>
+   <img height=500 src="https://github.com/soumildatta/Foodie/blob/master/screenshots/ss2.png"/>
+   <img height=500 src="https://github.com/soumildatta/Foodie/blob/master/screenshots/ss3.png"/>
+</p>
+
 ## Key Features
 * Displays the best restaurants in your area as determined by the Zomato API 
 * The restaurant cards can be clicked to reveal more information about the restaurants in a modal
-* An interactive map of the restaurant's location, the address, average customer rating, type of cuisine, pricing, and phone number are available for each restaurant
+* An interactive map of the restaurant's location, the address, average customer rating, type of cuisine, pricing, and phone number are available for each restaurant in the modal 
+* More information can be viewed from the Zomato Website by clicking on the **More Info** button
+* The driving directions from your location to the restaurant can be easily set up through Apple Maps by clicking on the **map icon button**
 
 ## Technologies Used
 This app is created using SwiftUI. All of the restaurant data is fetched from the Zomato API. The maps in the restaurant information modal are created using the Apple MapKit.
