@@ -5,9 +5,9 @@
 Foodie helps you find the best restaurants in your current area. Powered by the Zomato API, it presents up to date location on an interactive map, average customer rating, and other important information about each restaurant.
 
 <p>
-   <img height=500 src="https://github.com/soumildatta/Foodie/blob/master/FoodieDemo.gif"/>
-   <img height=500 src="https://github.com/soumildatta/Foodie/blob/master/screenshots/ss2.png"/>
-   <img height=500 src="https://github.com/soumildatta/Foodie/blob/master/screenshots/ss3.png"/>
+   <img height=500 src="FoodieDemo.gif" alt="A gif of the working demo"/>
+   <img height=500 src="screenshots/ss2.png" alt="A screenshot of the interface"/>
+   <img height=500 src="screenshots/ss3.png" alt="A screenshot of the interface"/>
 </p>
 
 ## Key Features
