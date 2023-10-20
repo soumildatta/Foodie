@@ -2,7 +2,7 @@
 [![swiftui-version](https://img.shields.io/badge/swiftui-blue)](https://developer.apple.com/documentation/swiftui)
 [![xcode-version](https://img.shields.io/badge/xcode-11-brightgreen)](https://developer.apple.com/xcode/)
 
-Foodie helps you find the best restaurants in your current area. Powered by the Zomato API, it presents up to date location on an interactive map, average customer rating, and other important information about each restaurant.
+Foodie helps you find the best restaurants in your current area. Powered by the Zomato API, it presents up to date location on an interactive map, average customer rating, and other important information about each restaurant. Foodie was developed for iOS with Swift and SwiftUI.
 
 <p>
    <img height=500 src="FoodieDemo.gif" alt="A gif of the working demo"/>
